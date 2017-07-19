@@ -1,0 +1,176 @@
+﻿<Window
+    x:Class="PUBattleGroundsCircleTimer.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:PUBattleGroundsCircleTimer"
+    mc:Ignorable="d"
+    Title="PUBG Circle Timer"
+    Height="420" Width="360"
+    ResizeMode="CanMinimize"
+    WindowStartupLocation="CenterScreen"
+    Loaded="Window_Loaded">
+    <StackPanel
+        Orientation="Vertical">
+        <Grid
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <TextBlock
+                x:Name="lblMainTimer"
+                FontSize="76"
+                Text="05:00"/>
+        </Grid>
+        <StackPanel
+            Orientation="Vertical"
+            Width="350"
+            Margin="0 0 0 16"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            <Grid
+                Width="320"
+                Margin="0 8 0 0">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Foreground="Red"
+                    Text="ESPERA"/>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Foreground="Black"
+                    Text="ZONAS"/>
+                <TextBlock
+                    HorizontalAlignment="Right"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Foreground="Blue"
+                    Text="CIERRE"/>
+            </Grid>
+            <!-- Zona 1 -->
+            <Grid
+                Width="290"
+                Margin="0 16 0 0">
+                <TextBlock
+                    x:Name="lblWaitOne"
+                    HorizontalAlignment="Left"
+                    FontSize="14"
+                    Text="05:00"/>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="1"/>
+                <TextBlock
+                    x:Name="lblCloseOne"
+                    HorizontalAlignment="Right"
+                    FontSize="14"
+                    Text="05:00"/>
+            </Grid>
+            <!-- Zona 2 -->
+            <Grid
+                Width="290"
+                Margin="0 16 0 0">
+                <TextBlock
+                    x:Name="lblWaitTwo"
+                    HorizontalAlignment="Left"
+                    FontSize="14"
+                    Text="03:30"/>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="2"/>
+                <TextBlock
+                    x:Name="lblCloseTwo"
+                    HorizontalAlignment="Right"
+                    FontSize="14"
+                    Text="02:30"/>
+            </Grid>
+            <!-- Zona 3 -->
+            <Grid
+                Width="290"
+                Margin="0 16 0 0">
+                <TextBlock
+                    x:Name="lblWaitThree"
+                    HorizontalAlignment="Left"
+                    FontSize="14"
+                    Text="02:30"/>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="3"/>
+                <TextBlock
+                    x:Name="lblCloseThree"
+                    HorizontalAlignment="Right"
+                    FontSize="14"
+                    Text="01:30"/>
+            </Grid>
+            <!-- Zona 4 -->
+            <Grid
+                Width="290"
+                Margin="0 16 0 0">
+                <TextBlock
+                    x:Name="lblWaitFour"
+                    HorizontalAlignment="Left"
+                    FontSize="14"
+                    Text="02:00"/>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="4"/>
+                <TextBlock
+                    x:Name="lblCloseFour"
+                    HorizontalAlignment="Right"
+                    FontSize="14"
+                    Text="01:30"/>
+            </Grid>
+            <!-- Zona 5 -->
+            <Grid
+                Width="290"
+                Margin="0 16 0 0">
+                <TextBlock
+                    x:Name="lblWaitFive"
+                    HorizontalAlignment="Left"
+                    FontSize="14"
+                    Text="02:00"/>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="5"/>
+                <TextBlock
+                    x:Name="lblCloseFive"
+                    HorizontalAlignment="Right"
+                    FontSize="14"
+                    Text="01:00"/>
+            </Grid>
+        </StackPanel>
+        <Grid>
+            <Button
+                x:Name="btnPlayPause"
+                Width="150" Height="30"
+                Margin="16"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center" Click="btnPlayPause_Click">
+                <TextBlock
+                    x:Name="txtPlayPause"
+                    Text="PLAY"/>
+            </Button>
+            <Button
+                x:Name="btnToggleSound"
+                Width="150" Height="30"
+                Margin="16"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center" Click="btnToggleSound_Click">
+                <TextBlock
+                    x:Name="txtToggleSound"
+                    Text="SONIDO: ON"/>
+            </Button>
+        </Grid>
+    </StackPanel>
+</Window>
