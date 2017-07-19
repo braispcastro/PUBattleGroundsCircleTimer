@@ -138,7 +138,7 @@ namespace PUBattleGroundsCircleTimer
 
         private void InitializeTimers()
         {
-            lblMainTimer.Text = "05:00";
+            lblMainTimer.Text = "02:00";
             lblWaitOne.Text = "05:00";
             lblWaitTwo.Text = "03:30";
             lblWaitThree.Text = "02:30";
@@ -150,7 +150,7 @@ namespace PUBattleGroundsCircleTimer
             lblCloseFour.Text = "01:30";
             lblCloseFive.Text = "01:00";
 
-            listSeconds = new List<int> { 300, 300, 210, 150, 150, 90, 120, 90, 120, 60 };
+            listSeconds = new List<int> { 120, 300, 300, 210, 150, 150, 90, 120, 90, 120, 60 };
             IndexTimer = 0;
             SecondsLeft = listSeconds[IndexTimer];
             lblMainTimer.Foreground = new SolidColorBrush(Colors.Black);
@@ -159,7 +159,10 @@ namespace PUBattleGroundsCircleTimer
         private void BgwTimer_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-            Dispatcher.Invoke(() => { lblMainTimer.Foreground = new SolidColorBrush((IndexTimer % 2 == 0) ? Colors.Red : Colors.Blue); });
+            if (IndexTimer > 0)
+            {
+                Dispatcher.Invoke(() => { lblMainTimer.Foreground = new SolidColorBrush((IndexTimer % 2 != 0) ? Colors.Red : Colors.Blue); });
+            }
 
             int auxSeconds = SecondsLeft;
             for (int i = auxSeconds; i >= 0; i--)
@@ -187,39 +190,39 @@ namespace PUBattleGroundsCircleTimer
             lblMainTimer.Text = sTimer;
             switch (IndexTimer)
             {
-                case 0:
+                case 1:
                     lblWaitOne.Text = sTimer;
                     break;
-                case 1:
+                case 2:
                     lblCloseOne.Text = sTimer;
                     break;
-                case 2:
+                case 3:
                     lblWaitTwo.Text = sTimer;
                     break;
-                case 3:
+                case 4:
                     lblCloseTwo.Text = sTimer;
                     break;
-                case 4:
+                case 5:
                     lblWaitThree.Text = sTimer;
                     break;
-                case 5:
+                case 6:
                     lblCloseThree.Text = sTimer;
                     break;
-                case 6:
+                case 7:
                     lblWaitFour.Text = sTimer;
                     break;
-                case 7:
+                case 8:
                     lblCloseFour.Text = sTimer;
                     break;
-                case 8:
+                case 9:
                     lblWaitFive.Text = sTimer;
                     break;
-                case 9:
+                case 10:
                     lblCloseFive.Text = sTimer;
                     break;
             }
 
-            if (IndexTimer % 2 == 0)
+            if (IndexTimer % 2 != 0)
             {
                 switch (SecondsLeft)
                 {
@@ -249,7 +252,7 @@ namespace PUBattleGroundsCircleTimer
             }
             else
             {
-                if (IndexTimer < 9)
+                if (IndexTimer < 10)
                 {
                     IndexTimer++;
                     SecondsLeft = listSeconds[IndexTimer];

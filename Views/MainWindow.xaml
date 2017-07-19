@@ -19,7 +19,7 @@
             <TextBlock
                 x:Name="lblMainTimer"
                 FontSize="76"
-                Text="05:00"/>
+                Text="02:00"/>
         </Grid>
         <StackPanel
             Orientation="Vertical"
