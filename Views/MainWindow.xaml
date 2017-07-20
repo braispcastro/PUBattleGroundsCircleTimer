@@ -14,12 +14,20 @@
     <StackPanel
         Orientation="Vertical">
         <Grid
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Stretch"
             VerticalAlignment="Center">
             <TextBlock
                 x:Name="lblMainTimer"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
                 FontSize="76"
-                Text="02:00"/>
+                Text="00:00"/>
+            <TextBlock
+                x:Name="lblVersion"
+                Margin="6 0 0 0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Text="v1.0.0"/>
         </Grid>
         <StackPanel
             Orientation="Vertical"
@@ -57,7 +65,7 @@
                     x:Name="lblWaitOne"
                     HorizontalAlignment="Left"
                     FontSize="14"
-                    Text="05:00"/>
+                    Text="00:00"/>
                 <TextBlock
                     HorizontalAlignment="Center"
                     FontSize="14"
@@ -67,7 +75,7 @@
                     x:Name="lblCloseOne"
                     HorizontalAlignment="Right"
                     FontSize="14"
-                    Text="05:00"/>
+                    Text="00:00"/>
             </Grid>
             <!-- Zona 2 -->
             <Grid
@@ -77,7 +85,7 @@
                     x:Name="lblWaitTwo"
                     HorizontalAlignment="Left"
                     FontSize="14"
-                    Text="03:30"/>
+                    Text="00:00"/>
                 <TextBlock
                     HorizontalAlignment="Center"
                     FontSize="14"
@@ -87,7 +95,7 @@
                     x:Name="lblCloseTwo"
                     HorizontalAlignment="Right"
                     FontSize="14"
-                    Text="02:30"/>
+                    Text="00:00"/>
             </Grid>
             <!-- Zona 3 -->
             <Grid
@@ -97,7 +105,7 @@
                     x:Name="lblWaitThree"
                     HorizontalAlignment="Left"
                     FontSize="14"
-                    Text="02:30"/>
+                    Text="00:00"/>
                 <TextBlock
                     HorizontalAlignment="Center"
                     FontSize="14"
@@ -107,7 +115,7 @@
                     x:Name="lblCloseThree"
                     HorizontalAlignment="Right"
                     FontSize="14"
-                    Text="01:30"/>
+                    Text="00:00"/>
             </Grid>
             <!-- Zona 4 -->
             <Grid
@@ -117,7 +125,7 @@
                     x:Name="lblWaitFour"
                     HorizontalAlignment="Left"
                     FontSize="14"
-                    Text="02:00"/>
+                    Text="00:00"/>
                 <TextBlock
                     HorizontalAlignment="Center"
                     FontSize="14"
@@ -127,7 +135,7 @@
                     x:Name="lblCloseFour"
                     HorizontalAlignment="Right"
                     FontSize="14"
-                    Text="01:30"/>
+                    Text="00:00"/>
             </Grid>
             <!-- Zona 5 -->
             <Grid
@@ -137,7 +145,7 @@
                     x:Name="lblWaitFive"
                     HorizontalAlignment="Left"
                     FontSize="14"
-                    Text="02:00"/>
+                    Text="00:00"/>
                 <TextBlock
                     HorizontalAlignment="Center"
                     FontSize="14"
@@ -147,7 +155,7 @@
                     x:Name="lblCloseFive"
                     HorizontalAlignment="Right"
                     FontSize="14"
-                    Text="01:00"/>
+                    Text="00:00"/>
             </Grid>
         </StackPanel>
         <Grid>

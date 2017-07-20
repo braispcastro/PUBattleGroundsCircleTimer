@@ -3,9 +3,11 @@ using PUBattleGroundsCircleTimer.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -53,6 +55,7 @@ namespace PUBattleGroundsCircleTimer
         public MainWindow()
         {
             InitializeComponent();
+            
             player = new SoundPlayer(Properties.Resources.drumsticks);
             bgwTimer = new BackgroundWorker();
             bgwTimer.WorkerSupportsCancellation = true;
@@ -64,6 +67,17 @@ namespace PUBattleGroundsCircleTimer
             InitializeTimers();
             TimerStatus = TimerStatus.Paused;
             txtToggleSound.Text = SoundsEnabled ? "SONIDO: ON" : "SONIDO: OFF";
+
+            try
+            {
+                string[] arrayVersion = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion.Split('.');
+                lblVersion.Text = string.Format("v{0}.{1}.{2}", arrayVersion[0], arrayVersion[1], arrayVersion[2]);
+            }
+            catch(Exception ex)
+            {
+                var error = ex.Message;
+                lblVersion.Text = string.Empty;
+            }
         }
 
         #region Component Events
@@ -140,17 +154,17 @@ namespace PUBattleGroundsCircleTimer
         {
             lblMainTimer.Text = "02:00";
             lblWaitOne.Text = "05:00";
-            lblWaitTwo.Text = "03:30";
-            lblWaitThree.Text = "02:30";
-            lblWaitFour.Text = "02:00";
-            lblWaitFive.Text = "02:00";
             lblCloseOne.Text = "05:00";
-            lblCloseTwo.Text = "02:30";
+            lblWaitTwo.Text = "03:20";
+            lblCloseTwo.Text = "02:20";
+            lblWaitThree.Text = "02:30";
             lblCloseThree.Text = "01:30";
-            lblCloseFour.Text = "01:30";
-            lblCloseFive.Text = "01:00";
+            lblWaitFour.Text = "02:00";
+            lblCloseFour.Text = "01:00";
+            lblWaitFive.Text = "01:30";
+            lblCloseFive.Text = "00:30";
 
-            listSeconds = new List<int> { 120, 300, 300, 210, 150, 150, 90, 120, 90, 120, 60 };
+            listSeconds = new List<int> { 120, 299, 299, 199, 139, 149, 89, 119, 59, 89, 29 };
             IndexTimer = 0;
             SecondsLeft = listSeconds[IndexTimer];
             lblMainTimer.Foreground = new SolidColorBrush(Colors.Black);
